@@ -196,9 +196,6 @@ Target "Release" (fun _ ->
     |> Async.RunSynchronously
 )
 
-Target "StartServer" (fun _ ->
-    fireAndForget (fun info -> info.FileName <- (siteBuildDir @@ "Site.exe"))
-)
 
 Target "RunTests" (fun _ ->
     let result =
@@ -223,7 +220,6 @@ Target "Default" DoNothing
   ==> "Build"
   ==> "CopyBinaries"
   ==> "CopyAssets"
-  ==> "StartServer"
   ==> "RunTests"
   ==> "All"
 
