@@ -1,0 +1,13 @@
+source https://nuget.org/api/v2
+
+github fsharp/FAKE modules/Octokit/Octokit.fsx
+nuget FAKE
+nuget SourceLink.Fake
+
+nuget FSharp.Core 3.1.2.5
+nuget Suave
+nuget Suave.Experimental
+nuget Npgsql
+nuget BCrypt-Official
+nuget Newtonsoft.Json 6.0.8
+nuget canopy

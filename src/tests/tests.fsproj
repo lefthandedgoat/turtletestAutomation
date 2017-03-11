@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1FC94F51-8F74-48C3-90B1-2780BD3C5D83}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>tests</RootNamespace>
+    <AssemblyName>tests</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <Externalconsole>true</Externalconsole>
+    <PlatformTarget>
+    </PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <Externalconsole>true</Externalconsole>
+    <GenerateTailCalls>true</GenerateTailCalls>
+    <PlatformTarget>
+    </PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="FSharp.Core" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="canopyExtensions.fs" />
+    <Compile Include="common.fs" />
+    <Compile Include="pages/page_application.fs" />
+    <Compile Include="pages/page_applications.fs" />
+    <Compile Include="pages/page_applicationCreate.fs" />
+    <Compile Include="pages/page_applicationEdit.fs" />
+    <Compile Include="pages/page_home.fs" />
+    <Compile Include="pages/page_login.fs" />
+    <Compile Include="pages/page_register.fs" />
+    <Compile Include="pages/page_suite.fs" />
+    <Compile Include="pages/page_suites.fs" />
+    <Compile Include="pages/page_suiteCreate.fs" />
+    <Compile Include="pages/page_suiteEdit.fs" />
+    <Compile Include="pages/page_testcase.fs" />
+    <Compile Include="pages/page_testcases.fs" />
+    <Compile Include="pages/page_testcaseCreate.fs" />
+    <Compile Include="pages/page_testcaseEdit.fs" />
+    <Compile Include="pages/page_testrun.fs" />
+    <Compile Include="pages/page_testruns.fs" />
+    <Compile Include="pages/page_testrunCreate.fs" />
+    <Compile Include="pages/page_testrunEdit.fs" />
+    <Compile Include="tests/application.fs" />
+    <Compile Include="tests/applications.fs" />
+    <Compile Include="tests/applicationCreate.fs" />
+    <Compile Include="tests/applicationEdit.fs" />
+    <Compile Include="tests/home.fs" />
+    <Compile Include="tests/login.fs" />
+    <Compile Include="tests/register.fs" />
+    <Compile Include="tests/suite.fs" />
+    <Compile Include="tests/suites.fs" />
+    <Compile Include="tests/suiteCreate.fs" />
+    <Compile Include="tests/suiteEdit.fs" />
+    <Compile Include="tests/testcase.fs" />
+    <Compile Include="tests/testcases.fs" />
+    <Compile Include="tests/testcaseCreate.fs" />
+    <Compile Include="tests/testcaseEdit.fs" />
+    <Compile Include="tests/testrun.fs" />
+    <Compile Include="tests/testruns.fs" />
+    <Compile Include="tests/testrunCreate.fs" />
+    <Compile Include="tests/testrunEdit.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.1\Framework\v4.0\Microsoft.FSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="canopy">
+      <HintPath>..\..\packages\canopy\lib\canopy.dll</HintPath>
+      <Private>True</Private>
+      <Paket>True</Paket>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="Npgsql">
+          <HintPath>..\..\packages\Npgsql\lib\net45\Npgsql.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="System.Drawing">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="WebDriver">
+          <HintPath>..\..\packages\Selenium.WebDriver\lib\net35\WebDriver.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="System.Drawing">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="WebDriver">
+          <HintPath>..\..\packages\Selenium.WebDriver\lib\net40\WebDriver.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+</Project>

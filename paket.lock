@@ -1,0 +1,29 @@
+NUGET
+  remote: https://www.nuget.org/api/v2
+    BCrypt-Official (0.1.109)
+    canopy (1.1.4)
+      FSharp.Core (>= 3.0.2)
+      Selenium.WebDriver (3.0)
+    FAKE (4.12)
+    FSharp.Core (3.1.2.5)
+    Microsoft.Bcl (1.1.10) - framework: net10, net11, net20, net30, net35, net40, net40-full
+      Microsoft.Bcl.Build (>= 1.0.14)
+    Microsoft.Bcl.Build (1.0.21) - import_targets: false, framework: net10, net11, net20, net30, net35, net40, net40-full
+    Microsoft.Net.Http (2.2.29) - framework: net10, net11, net20, net30, net35, net40, net40-full
+      Microsoft.Bcl (>= 1.1.10)
+      Microsoft.Bcl.Build (>= 1.0.14)
+    Newtonsoft.Json (6.0.8)
+    Npgsql (3.0.5)
+    Octokit (0.24)
+      Microsoft.Net.Http  - framework: net10, net11, net20, net30, net35, net40, net40-full
+    Selenium.WebDriver (3.0)
+    SourceLink.Fake (1.1)
+    Suave (0.33)
+      FSharp.Core (>= 3.1.2.5)
+    Suave.Experimental (0.33)
+      FSharp.Core (>= 3.1.2.5)
+      Suave (>= 0.33)
+GITHUB
+  remote: fsharp/FAKE
+    modules/Octokit/Octokit.fsx (fed01fd06a3838b924aca6d3db0ab89813dea2eb)
+      Octokit (>= 0.20)
